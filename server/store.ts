@@ -53,10 +53,10 @@ export function createFileStore(baseDir: string) {
   return {
     saveRun: (r: RunReport) => save("runs", r),
     getRun: (id: string) => get("runs", id) as Promise<RunReport | null>,
-    listRuns: () => list("runs") as Promise<RunReport[]>,
+    listRuns: (limit?: number) => list("runs", limit) as Promise<RunReport[]>,
     saveNiche: (n: NicheRun) => save("niches", n),
     getNiche: (id: string) => get("niches", id) as Promise<NicheRun | null>,
-    listNiches: () => list("niches") as Promise<NicheRun[]>,
+    listNiches: (limit?: number) => list("niches", limit) as Promise<NicheRun[]>,
   };
 }
 

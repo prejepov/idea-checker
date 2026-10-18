@@ -156,7 +156,8 @@ export function NicheFinder(props: { run: NicheRun | null; onRun: (r: NicheRun) 
 
           <details>
             <summary>
-              Inputs Claude used ({run.phrases.length} phrases, {run.subreddits.length} subreddits)
+              Inputs Claude used ({run.phrases.length} phrases,{" "}
+              {run.redditPurgedAt ? "subreddit list removed after 30 days" : `${run.subreddits.length} subreddits`})
             </summary>
             <div className="two-col">
               <ul>

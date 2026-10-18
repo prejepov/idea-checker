@@ -36,6 +36,12 @@ export function Report({ report }: { report: RunReport }) {
         </span>
       </div>
       <SourceChips sources={report.sources} />
+      {report.redditPurgedAt && (
+        <p className="muted small">
+          Reddit post text and links were removed on {new Date(report.redditPurgedAt).toLocaleDateString()} (30-day
+          retention). Gaps and source counts are unchanged.
+        </p>
+      )}
 
       {report.gaps.length === 0 ? (
         <p className="muted">No gaps found. Add reviews, or check that the sources returned anything.</p>
@@ -90,7 +96,7 @@ function GapCard({ gap, byId }: { gap: ScoredGap; byId: Map<string, EvidenceItem
             return (
               <li key={id}>
                 <code>{id}</code> <span className="muted small">{e.subreddit ?? e.source}</span>
-                <blockquote>{e.text}</blockquote>
+                <blockquote className={e.redacted ? "muted" : undefined}>{e.text}</blockquote>
                 {e.url && (
                   <a href={e.url} target="_blank" rel="noreferrer">
                     Open thread

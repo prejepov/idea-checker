@@ -61,10 +61,24 @@ shared/schema.ts            zod schemas shared by server and web (incl. what Cla
 server/sources/             reddit.ts (OAuth app-only), autocomplete.ts (unofficial endpoint), pasted.ts (reviews/threads)
 server/analyze/             prompt.ts, claude.ts (structured outputs + refusal fallback), score.ts, mock.ts
 server/pipeline.ts          the two stages; a failing source becomes a status line, not a failed run
+server/retention.ts         removes Reddit content from saved runs after 30 days
 server/app.ts, main.ts      Express routes; serves dist/web after `npm run build`
 web/src/                    React app: NicheFinder, CheckForm, Report, History
 fixtures/                   mock-mode data + sample reviews (made-up test data)
 ```
+
+## Data handling (Reddit)
+- **Read-only.** The app never posts, comments, votes or messages. It uses app-only OAuth (`client_credentials`) and makes 3 `GET /search` calls per check, 25 results each.
+- **Minimal fields.** For each post it keeps the title, an excerpt of up to 600 characters, the subreddit, the score and the permalink. It stores no usernames or other user data. The Niche Finder also keeps subreddit names, member counts and descriptions.
+- **Local only.** Runs are JSON files in `data/` on your machine. They're git-ignored, never published, and not shared with anyone.
+- **30-day retention.** Reddit content in saved runs is removed once the run is 30 days old (`server/retention.ts`):
+  - Gap runs: Reddit post text, links and subreddit names are replaced with a placeholder. The evidence ids stay, so gaps and source counts still read correctly. Reviews, autocomplete phrases and Claude's gap summaries are kept.
+  - Niche runs: the subreddit list is removed.
+  - The purge runs whenever the server starts and every 6 hours while it runs. You can also run it by hand:
+    ```bash
+    npm run purge:reddit
+    ```
+- **Processing.** Post excerpts are sent to the Claude API (Anthropic) only to group recurring problems into themes. Reddit data is not used to train models, not sold, and not redistributed.
 
 ## Notes
 - **Etsy:** nothing is scraped (it's against Etsy's terms). Reviews and revenue numbers are entered by hand.

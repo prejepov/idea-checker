@@ -11,7 +11,8 @@
     "lint": "eslint .",
     "test:unit": "vitest run",
     "test:e2e": "playwright test",
-    "smoke:sources": "tsx scripts/smoke-sources.ts"
+    "smoke:sources": "tsx scripts/smoke-sources.ts",
+    "purge:reddit": "tsx scripts/purge-reddit.ts"
   },
   "type": "module",
   "dependencies": {

@@ -12,6 +12,7 @@ export const EvidenceItem = z.object({
   url: z.string().optional(),
   subreddit: z.string().optional(),
   rating: z.number().optional(),
+  redacted: z.boolean().optional(), // Reddit text removed by the 30-day retention rule
 });
 export type EvidenceItem = z.infer<typeof EvidenceItem>;
 
@@ -121,6 +122,7 @@ export const NicheRun = z.object({
   subreddits: z.array(Subreddit),
   candidates: z.array(NicheCandidate),
   usage: Usage.nullable(),
+  redditPurgedAt: z.string().optional(),
 });
 export type NicheRun = z.infer<typeof NicheRun>;
 
@@ -168,6 +170,7 @@ export const RunReport = z.object({
   gaps: z.array(ScoredGap),
   usage: Usage.nullable(),
   fromNicheRun: z.string().optional(),
+  redditPurgedAt: z.string().optional(),
 });
 export type RunReport = z.infer<typeof RunReport>;
 
