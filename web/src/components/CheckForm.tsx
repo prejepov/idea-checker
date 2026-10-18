@@ -2,11 +2,13 @@ import { useState, type ChangeEvent, type FormEvent } from "react";
 import { PAIN_TEMPLATES, painQuery, redditSearchUrl } from "../../../shared/reddit";
 import type { RunReport } from "../../../shared/schema";
 import { api, parseMoney } from "../api";
+import { AddFromClipboard, ClipperInstall } from "./Clipper";
 import { ErrorBox, Working } from "./shared";
 
 export interface CheckPrefill {
   key: string;
   niche: string;
+  nicheName?: string;
   topMonthlyRevenue: number | null;
   badgeSeen: boolean;
   fromNicheRun?: string;
@@ -71,6 +73,12 @@ export function CheckForm(props: {
           Niche
           <input value={niche} onChange={(e) => setNiche(e.target.value)} placeholder="budget spreadsheet" required minLength={2} />
         </label>
+        {p?.nicheName && (
+          <p className="muted small prefill-note">
+            From Niche Finder: “{p.nicheName}”. Keep the niche short (2–3 words) so Reddit and Google searches find
+            results.
+          </p>
+        )}
 
         <label>
           3-star reviews from the top 3 listings{" "}
@@ -135,6 +143,7 @@ export function CheckForm(props: {
               </li>
             ))}
           </ul>
+          <ClipperInstall />
           <textarea
             aria-label="Pasted Reddit threads"
             value={redditText}
@@ -142,6 +151,7 @@ export function CheckForm(props: {
             rows={5}
             placeholder="One post per paragraph"
           />
+          <AddFromClipboard value={redditText} onChange={setRedditText} />
         </details>
 
         <button type="submit" disabled={loading}>

@@ -62,10 +62,24 @@ server/sources/             reddit.ts (OAuth app-only), autocomplete.ts (unoffic
 server/analyze/             prompt.ts, claude.ts (structured outputs + refusal fallback), score.ts, mock.ts
 server/pipeline.ts          the two stages; a failing source becomes a status line, not a failed run
 server/retention.ts         removes Reddit content from saved runs after 30 days
+shared/clipper.ts           the "Clip to Idea Checker" bookmarklet (you browse; one click copies a post)
 server/app.ts, main.ts      Express routes; serves dist/web after `npm run build`
 web/src/                    React app: NicheFinder, CheckForm, Report, History
 fixtures/                   mock-mode data + sample reviews (made-up test data)
 ```
+
+## Reddit clipper (while the API isn't available)
+A bookmark that takes the copy-paste work out of collecting Reddit posts. **You** still browse and choose the posts. The clipper only formats what's on your screen when you click it: it never opens, scrolls or loads pages by itself.
+
+1. In **2. Check a niche**, open "Reddit API not working? Paste threads instead".
+2. Drag **Clip to Idea Checker** to your bookmarks bar. Or click "copy the code", create a new bookmark, and paste the code as its URL.
+3. On Reddit, open a post where someone describes a problem, then click the bookmark.
+   - It copies the title, the text (up to 1,200 characters), the subreddit and the link.
+   - Usernames are left out, and `u/` mentions in the text are masked.
+   - To clip just a comment or part of a post, highlight it first.
+4. Back in the app, click **Add from clipboard**. Each clip becomes its own entry, and duplicates are skipped.
+
+It works on new Reddit (`www.reddit.com`) and old Reddit (`old.reddit.com`). The code is in `shared/clipper.ts`, and it's tested against made-up pages in `fixtures/clipper/`. If Reddit changes its page layout and a full-post clip comes out empty, highlighting the text first still works.
 
 ## Data handling (Reddit)
 - **Read-only.** The app never posts, comments, votes or messages. It uses app-only OAuth (`client_credentials`) and makes 3 `GET /search` calls per check, 25 results each.

@@ -25,10 +25,11 @@ test("niche finder -> gap checker -> history", async ({ page }) => {
   await expect(couples).toContainText("Below bar");
   await expect(page.getByRole("button", { name: /Check this niche/ })).toHaveCount(1);
 
-  // Stage 2: the picked niche and its revenue carry over.
+  // Stage 2: the picked niche's short Etsy term (searches better than the full name) and its revenue carry over.
   await irregular.getByRole("button", { name: /Check this niche/ }).click();
   await expect(page.getByRole("tab", { name: "2. Check a niche" })).toHaveAttribute("aria-selected", "true");
-  await expect(page.getByLabel("Niche")).toHaveValue("Budget spreadsheet for irregular income");
+  await expect(page.getByLabel("Niche")).toHaveValue("freelance budget spreadsheet");
+  await expect(page.getByText("From Niche Finder: “Budget spreadsheet for irregular income”")).toBeVisible();
   await expect(page.getByLabel("Top listing revenue / month")).toHaveValue("13990");
 
   await page.getByLabel(/3-star reviews/).fill(sampleReviews);
@@ -50,8 +51,8 @@ test("niche finder -> gap checker -> history", async ({ page }) => {
   // History lists both runs and reopens the report.
   await page.getByRole("tab", { name: "History" }).click();
   await expect(page.getByText("1 passing of 8 candidates")).toBeVisible();
-  await page.getByRole("button", { name: "Budget spreadsheet for irregular income" }).click();
-  await expect(page.getByRole("region", { name: "Report" })).toContainText("Gaps for “Budget spreadsheet for irregular income”");
+  await page.getByRole("button", { name: "freelance budget spreadsheet" }).click();
+  await expect(page.getByRole("region", { name: "Report" })).toContainText("Gaps for “freelance budget spreadsheet”");
 });
 
 test("manual Reddit search links follow the niche and pasted threads count", async ({ page }) => {

@@ -137,7 +137,9 @@ export function NicheFinder(props: { run: NicheRun | null; onRun: (r: NicheRun) 
                     onCheck={() =>
                       props.onCheck({
                         key: `${run.id}-${c.id}`,
-                        niche: c.name,
+                        // The short category-level term searches far better on Reddit and Google than the full name.
+                        niche: c.etsy_search_term,
+                        nicheName: c.name,
                         topMonthlyRevenue: c.topMonthlyRevenue,
                         badgeSeen: c.badgeSeen,
                         fromNicheRun: run.id,
