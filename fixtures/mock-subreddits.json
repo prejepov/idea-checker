@@ -1,0 +1,7 @@
+[
+  { "name": "r/personalfinance", "subscribers": 1000000, "url": "https://www.reddit.com/r/personalfinance/", "description": "Fixture: personal finance discussion" },
+  { "name": "r/googlesheets", "subscribers": 100000, "url": "https://www.reddit.com/r/googlesheets/", "description": "Fixture: Google Sheets help" },
+  { "name": "r/excel", "subscribers": 500000, "url": "https://www.reddit.com/r/excel/", "description": "Fixture: Excel help" },
+  { "name": "r/budget", "subscribers": 200000, "url": "https://www.reddit.com/r/budget/", "description": "Fixture: budgeting" },
+  { "name": "r/freelance", "subscribers": 300000, "url": "https://www.reddit.com/r/freelance/", "description": "Fixture: freelancing" }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Budget spreadsheet for irregular income",
+    "etsy_search_term": "freelance budget spreadsheet",
+    "buyer": "Freelancers and commission earners",
+    "moment": { "who": "A freelancer who just got paid", "where": "At their laptop on the 1st", "screen": "Bank app with a smaller deposit than last month", "next_action": "Decide this month's safe spending" },
+    "canva20": { "copyable": false, "reason": "Rolling income-buffer formulas." },
+    "why": "Phrases 'spreadsheet to track freelance income'; r/freelance"
+  },
+  {
+    "name": "Couples budget spreadsheet",
+    "etsy_search_term": "couples budget spreadsheet",
+    "buyer": "Partners sharing costs with separate accounts",
+    "moment": { "who": "Two partners at month end", "where": "On the couch", "screen": "A shared Google Sheet on one phone", "next_action": "Settle up rent and groceries" },
+    "canva20": { "copyable": false, "reason": "Split ratios and settle-up formulas." },
+    "why": "Phrase 'best spreadsheet for couples budget'; r/personalfinance"
+  },
+  {
+    "name": "Debt payoff tracker",
+    "etsy_search_term": "debt payoff spreadsheet",
+    "buyer": "People paying off several debts",
+    "moment": { "who": "Someone with 4 credit cards", "where": "At the kitchen table", "screen": "Four statements in browser tabs", "next_action": "Choose which debt to pay first" },
+    "canva20": { "copyable": false, "reason": "Snowball/avalanche schedules need formulas." },
+    "why": "Phrase 'spreadsheet to track debt payoff'"
+  },
+  {
+    "name": "Small business bookkeeping sheet",
+    "etsy_search_term": "small business spreadsheet",
+    "buyer": "Solo business owners and Etsy sellers",
+    "moment": { "who": "A solo business owner at quarter end", "where": "At their desk", "screen": "A pile of receipts and a payment dashboard", "next_action": "Estimate profit and tax due" },
+    "canva20": { "copyable": false, "reason": "P&L and tax set-aside formulas." },
+    "why": "Phrase 'spreadsheet for small business'; r/excel"
+  },
+  {
+    "name": "Rental property tracker",
+    "etsy_search_term": "rental property spreadsheet",
+    "buyer": "Small landlords with 1-5 units",
+    "moment": { "who": "A landlord with two units", "where": "At home in the evening", "screen": "A repair invoice email", "next_action": "Log it against the right property" },
+    "canva20": { "copyable": false, "reason": "Per-property cash flow formulas." },
+    "why": "Phrase 'spreadsheet for rental property'"
+  },
+  {
+    "name": "Wedding budget planner",
+    "etsy_search_term": "wedding budget spreadsheet",
+    "buyer": "Engaged couples planning a wedding",
+    "moment": { "who": "An engaged couple after a venue visit", "where": "In the car", "screen": "The venue's quote PDF", "next_action": "See if the quote fits the total budget" },
+    "canva20": { "copyable": false, "reason": "Vendor totals and remaining budget formulas." },
+    "why": "Phrase 'spreadsheet template for wedding budget'"
+  },
+  {
+    "name": "Weekly meal planner printable",
+    "etsy_search_term": "meal planner",
+    "buyer": "Busy parents",
+    "moment": { "who": "A parent on Sunday", "where": "In the kitchen", "screen": "An empty fridge", "next_action": "Plan the week's dinners" },
+    "canva20": { "copyable": true, "reason": "A grid layout is easy to recreate in Canva." },
+    "why": "Phrase 'spreadsheet planner for meals'"
+  },
+  {
+    "name": "Habit tracker printable",
+    "etsy_search_term": "habit tracker",
+    "buyer": "People building new routines",
+    "moment": { "who": "Someone starting a new year", "where": "At their desk", "screen": "A blank notebook", "next_action": "Pick habits to track" },
+    "canva20": { "copyable": true, "reason": "Checkbox grids are trivial to copy." },
+    "why": "Phrase 'spreadsheet habit tracker'"
+  }
+]

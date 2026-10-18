@@ -1,0 +1,67 @@
+[
+  {
+    "title": "No way to budget an irregular income",
+    "problem": "Freelancers and commission earners say budget templates assume a fixed monthly salary, so the sheet is wrong every month their pay changes.",
+    "keywords": ["irregular", "freelance", "variable income", "side hustle", "commission", "self-employed"],
+    "fix": "Budget from a rolling 'income buffer': log pay as it arrives, fund next month from last month's actual income, and show how many months of buffer remain.",
+    "moment": {
+      "who": "A freelance designer who just got paid by one client",
+      "where": "At their laptop on the 1st of the month",
+      "screen": "Their bank app showing a smaller deposit than last month",
+      "next_action": "Decide how much they can safely spend this month"
+    },
+    "canva20": { "copyable": false, "reason": "Needs rolling formulas across months and a buffer calculation, not just a layout." }
+  },
+  {
+    "title": "Couples can't share one budget",
+    "problem": "Partners want one budget but separate accounts; templates don't show who paid what or each person's share.",
+    "keywords": ["partner", "couple", "spouse", "husband", "wife", "shared", "joint"],
+    "fix": "A 'paid by' column per transaction, configurable split ratios, and a monthly settle-up line that says who owes whom.",
+    "moment": {
+      "who": "Two partners who just moved in together",
+      "where": "On the couch, end of the month",
+      "screen": "A shared Google Sheet open on one phone",
+      "next_action": "Work out who owes whom for rent and groceries"
+    },
+    "canva20": { "copyable": false, "reason": "Split ratios and settle-up math need real formulas." }
+  },
+  {
+    "title": "Setup is confusing and formulas break",
+    "problem": "Buyers give up during setup or break formulas when they add a category, then see #REF! errors.",
+    "keywords": ["confusing", "complicated", "instructions", "setup", "broke", "#ref", "formula"],
+    "fix": "A 3-step Start Here tab, categories managed only in Settings (named ranges), locked formula cells and a setup video.",
+    "moment": {
+      "who": "A first-time buyer who just downloaded the file",
+      "where": "At their desk right after purchase",
+      "screen": "An unfamiliar workbook with 12 tabs",
+      "next_action": "Enter their first expense without breaking anything"
+    },
+    "canva20": { "copyable": false, "reason": "Error-proofing and protected formulas take real spreadsheet skill." }
+  },
+  {
+    "title": "Annual and irregular bills catch people out",
+    "problem": "Yearly costs like car insurance or holidays blow up the monthly budget because nothing saves for them ahead of time.",
+    "keywords": ["sinking fund", "annual", "yearly", "car insurance", "christmas"],
+    "fix": "A sinking-funds tab that turns each yearly cost into a monthly set-aside and shows progress per fund.",
+    "moment": {
+      "who": "Someone who just got a $900 car insurance renewal",
+      "where": "Checking email at lunch",
+      "screen": "The renewal notice",
+      "next_action": "Figure out where the money will come from"
+    },
+    "canva20": { "copyable": false, "reason": "Per-fund monthly targets need date math." }
+  },
+  {
+    "title": "Hard to use on a phone",
+    "problem": "People record spending on the go but the sheet is unusable on a small screen.",
+    "keywords": ["phone", "mobile", "on the go"],
+    "fix": "A narrow 'quick add' input tab designed for the Google Sheets mobile app.",
+    "moment": {
+      "who": "Someone paying at a coffee shop",
+      "where": "At the counter",
+      "screen": "The Google Sheets app on their phone",
+      "next_action": "Log the purchase in under 10 seconds"
+    },
+    "canva20": { "copyable": true, "reason": "A simple input layout is easy to copy." }
+  }
+]
